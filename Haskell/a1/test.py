@@ -59,6 +59,8 @@ def test2():
     print(t2)
 
 def nthTrue(n):
+    #wants the value when it returns true,
+    
     
 
 
