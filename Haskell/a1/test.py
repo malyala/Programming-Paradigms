@@ -12,15 +12,15 @@ def isPerfect(start, n):
     return total
 
 def isPerfect2(n):
-    if((2 * n) == findFactor(n)):
+    if((2 * n) == findFactor(n, n)):
         return True
     return False
 
-def findFactor(n):
+def findFactor(start, n):
     if(n < 1):
         return 0
     else:
-        past = findFactor(n-1)
+        past = findFactor(start, n-1)
         if(start % n == 0):
             past = past + n
         return past
@@ -34,17 +34,17 @@ def isPerfect(n):
     
     
 def test():
-    t1 = isPerfect(28, 28)
+    t1 = isPerfect2(28)
     print (t1)
-    t2 = isPerfect(10, 10)
+    t2 = isPerfect2(10)
     print (t2)
-    t3 = isPerfect((-4),(-4))
+    t3 = isPerfect2(-4)
     print (t3)
-    t4 = isPerfect(0, 0)
+    t4 = isPerfect2(0)
     print (t4)
-    t5 = isPerfect(6, 6)
+    t5 = isPerfect2(6)
     print (t5)
-    t6 = isPerfect(7,7)
+    t6 = isPerfect2(7)
     print (t6)
 
 def intSqrt(n):
@@ -79,11 +79,5 @@ def test2():
     t2 = isPrime(7)
     print(t2)
 
-def nthTrue(n):
-    #wants the value when it returns true,
-    
-    
 
-
-    
 
