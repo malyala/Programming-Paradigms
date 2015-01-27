@@ -8,7 +8,7 @@ isPerfect n
 	| otherwise = False
 
 findFactor :: Int -> Int -> Int -> Int
-findFactor start n sum
+findFactor start n total
 	| n < 1 = False
-	| otherwise sum = findFactor(start, n, sum)
-		|(mod start n == 0) then sum + n
+	| otherwise total = findFactor(start, n, total)
+		|(mod start n == 0) then total + n
