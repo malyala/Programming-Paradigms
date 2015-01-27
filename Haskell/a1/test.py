@@ -11,7 +11,12 @@ def isPerfect(start, n):
             return False
     return total
 
-def findFactor(start, n):
+def isPerfect2(n):
+    if((2 * n) == findFactor(n)):
+        return True
+    return False
+
+def findFactor(n):
     if(n < 1):
         return 0
     else:
