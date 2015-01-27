@@ -10,6 +10,22 @@ def isPerfect(start, n):
         else:
             return False
     return total
+
+def findFactor(start, n):
+    if(n < 1):
+        return 0
+    else:
+        past = findFactor(n-1)
+        if(start % n == 0):
+            past = past + n
+        return past
+    
+
+
+def isPerfect(n):
+    if(n < 1):
+        return
+    
     
     
 def test():
