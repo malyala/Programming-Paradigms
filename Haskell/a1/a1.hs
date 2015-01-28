@@ -1,22 +1,25 @@
-isPerfect :: Int -> Bool
-isPerfect 1 = True
-isPerfect 0 = False
+-- Keith Weaver
+-- 10048505
+--
+isPerfect :: Int -> Bool -- Passes an int returns a boolea n
+isPerfect 1 = True -- returns true if 1
+isPerfect 0 = False -- if 0 returns false
 isPerfect n
-	| mod n 2 == 1 = False
-	| n < 0 = False
-	| (2 * n) == findFactor (n, n, 0) = True
-	| otherwise = False
+	| mod n 2 == 1 = False -- if odd return false
+	| n < 0 = False -- if less than 0 than return false
+	| (2 * n) == findFactor (n, n, 0) = True -- if 2 times n is equal the sum of the factors is equal to true
+	| otherwise = False -- other than that, false
 
-findFactor :: Int -> Int -> Int -> Int
+findFactor :: Int -> Int -> Int -> Int -- finds the sum, by going through the factors recursively
 findFactor start n total
 	| n < 1 = False
 	| otherwise total = findFactor(start, n, total)
 		| (mod start n == 0) then total + n
 
-nthTrue :: (Int -> Bool) -> Int -> Int
+nthTrue :: (Int -> Bool) -> Int -> Int -- passes in the function (that has a int and boolean) and int, returns int
 nthTrue func n
 	| n < 1 = error "Value cannot be below"
-	| otherwise = helperFunc func n 0 (-1)
+	| otherwise = helperFunc func n 0 (-1) -- pass the function in
 
 helperFunc :: (Int -> Bool) -> Int -> Int -> Int -> Int
 helperFunc func n numb count
