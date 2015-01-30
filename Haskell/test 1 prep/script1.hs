@@ -150,7 +150,7 @@ mystery x n
 	| n > x = mystery(2*x)(n-x)
 	| otherwise = mystery (n+x)(n-1)
 
-
+--2. Write a function called elemCount that takes a Int and a list of Int, and returns the number of times the int shows up in the list
 --elemCount :: [Int] -> Int -> Int
 --elemCount l n
 --	| length (tail l) < 0 = 0
@@ -158,6 +158,7 @@ mystery x n
 --	| (head(l) == n) = (1 + elemCount((tail l) n))
 --	| otherwise = elemCount((tail l) n)
 
+-- 3. Define a function called prefix, that takes 2 parameters, a string and an int, returns a string, prefix str n -- should  be the first n characters of str. if n is negative the function should return an error, if n is greater than length of str, the result should be all of str
 --prefix :: String -> Int -> String
 --prefix s n
 --	| n > length s = error "N is larger than string"
@@ -179,3 +180,27 @@ onThreeLines s1 s2 s3 = s1 ++ "\n" ++ s2 ++ "\n"++ s3
 type CourseData = [(String, Int)]
 testCourse :: CourseData
 testCourse = [("Peter", 97), ("Susan", 76)]
+
+dog :: Int -> Int -> String
+dog count n = count < n = "Dog\n" ++ (dog (count+1) n)
+
+
+weirdSort :: [Int] -> [Int]
+weirdSort l = [1]
+
+weirdSortHelp :: [Int] -> [Int] -> [Int]--current list, new list
+weirdSortHelp cl nl = [1,2,3]
+
+findLowValue :: [Int]  -> Int
+findLowValue l
+	| length (tail l) == 0 = 0
+	| y > x = x
+	| x >= x = y
+	where
+		x = head(l)
+		y = findLowValue(tail l)
+
+
+
+
+

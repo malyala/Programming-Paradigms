@@ -1,0 +1,32 @@
+FOR LIST
+===
+length 
+reverse
+head
+tail
+sum
+:
+++
+concat
+last
+take n [a]
+drop n [a]
+splitAt n [a]
+
+
+Declaring a list,
+===
+(l:l <- s, x==c)
+[Int] -> Int
+
+Declaring a tuple
+====
+type myTuple = [(Int, String)]
+
+functionName :: myTuple = [a]
+functionName myTuple = ...
+
+CHAR
+===
+ord
+
