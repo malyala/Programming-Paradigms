@@ -1,0 +1,24 @@
+260 Questions
+
+1. 
+mystery :: Int -> Int -> Int
+mystery x n
+    | n == 0 = 1
+    | n == 1 = x
+    | x < n = x*n
+    | n > x = mystery (2*x) (n-x)
+    | otherwise = mystery (n+x) (n-1)
+
+Output:
+mystery 7 1 = 7
+mystery 2 3 = 6
+mystery 6 4 = 15
+mystery (-2) 0 = 1
+mystery 3 (-1) = INF <---- WRONG its 35
+
+
+2. Write a function called elemCount that takes a Int and a list of Int, and returns the number of times the int shows up in the list
+
+
+3. Define a function called prefix, that takes 2 parameters, a string and an int, returns a string, prefix str n -- should  be the first n characters of str. if n is negative the function should return an error, if n is greater than length of str, the result should be all of str
+
