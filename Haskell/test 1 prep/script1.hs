@@ -158,13 +158,24 @@ mystery x n
 --	| (head(l) == n) = (1 + elemCount((tail l) n))
 --	| otherwise = elemCount((tail l) n)
 
-prefix :: String -> Int -> String
-prefix s n
-	| n > length s = error "N is larger than string"
-	| n < 0 = error "N is a negative"
-	| otherwise = helpFunction(s, n, 0)
+--prefix :: String -> Int -> String
+--prefix s n
+--	| n > length s = error "N is larger than string"
+--	| n < 0 = error "N is a negative"
+--	| otherwise = helpFunction(s, n, 0)
 
-helpFunction :: String -> Int -> Int -> String
-helpFunction str n count
-	| count == n = head(str)
-	| otherwise = head(str) ++ helpFunction((tail str), n, count+1)
+--helpFunction :: String -> Int -> Int -> String
+--helpFunction str n count
+--	| count == n = head(str)
+--	| otherwise = head(str) ++ helpFunction((tail str), n, count+1)
+
+onThreeLines :: String -> String -> String -> String
+onThreeLines s1 s2 s3 = s1 ++ "\n" ++ s2 ++ "\n"++ s3
+-- putStrLn (onThreeLines "apple" "banana" "carrot")
+
+--Tupples
+--declare tupples like, (Type1, Type2, Type3 ...)
+
+type CourseData = [(String, Int)]
+testCourse :: CourseData
+testCourse = [("Peter", 97), ("Susan", 76)]
