@@ -59,3 +59,28 @@
 --hopscotch :: [Int] -> ([Int], Int)
 --hopscotch [] = ([], 0)
 --hopscotch currentl = 
+
+singlePath :: [Int] -> Int -> Int -> [Int] -> Int -> Int -> [Int]
+singlePath list n i path jump jump2
+	|(n == ((length list)-1)) || (n == ((length list-2))) = [list[i]]
+	|otherwise
+		| n == i = [i] ++ singlePath(list n (i+jump) path jump jump2)
+		| otherwise = [i] ++ singlePath(list n (i+jump) path jump jump2)
+	-- syntax error with |
+
+paths :: [Int] -> [[Int]]
+paths [] = []
+paths list = [helperPaths(list (length list) [] 2 3)] ++ [helperPaths(list (length list) [] 3 2)]
+
+-- helpPaths :: list n currentResults jump jump2
+-- 			if n = 0 then return currentResults
+-- 			else
+--  		    path = singlePath(list n 0 [] jump jump2)
+--				add path to current results
+-- 				helperPaths(list (n - jump) currentResults)
+-- 
+
+helperPaths :: [Int] -> Int -> [[Int]] -> Int -> Int
+helperPaths list n currentResults jump jump2
+	| n == 0 = currentResults
+	| otherwise = []
