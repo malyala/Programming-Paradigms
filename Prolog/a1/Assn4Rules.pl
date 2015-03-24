@@ -27,6 +27,6 @@ winner(X, Year, Award) :-
 
 
 doubleNominee(Name) :-
-	oscar(award(X,_,winner), person(Name,_)),
-	oscar(award(Y,_,winner), person(Name,_)),
-	X \= Y.
+	oscar(award(X,Z,winner), person(Name,_)),
+	oscar(award(Y,W,winner), person(Name,_)),
+	X \= Y ; Z \= W.
