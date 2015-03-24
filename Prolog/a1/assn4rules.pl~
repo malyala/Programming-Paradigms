@@ -1,0 +1,29 @@
+vampire(Name) :-
+	whedon(_,_,Name,vampire).
+
+category(Name, Cat) :-
+	whedon(_,_,Name, Cat).
+
+twice(Name) :-
+	whedon(_,_,Name,Role),
+	whedon(_,_,Name,Role2),
+	Role =\= Role2.
+
+hatTrick(Who) :-
+	whedon(Firefly, Who,_),
+	whedon(Angel, Who, _),
+	whedon(Buffy, Who, _),
+	(Firefly \= Angel),
+	(Buffy \= Angel),
+	(Firefly \= Buffy).
+
+hasOscar(Name) :-
+	oscar(award(_,_,_), person(Name,_)).
+
+/*
+winner(Type, Year, Award) :-
+	oscar(award(_,_,_), person(_,_)).
+*/
+
+/* double nominee */
+

@@ -5,14 +5,28 @@ category(Name, Cat) :-
 	whedon(_,_,Name, Cat).
 
 twice(Name) :-
-	whedon(_,_,Name,Role),
-	whedon(_,_,Name,Role2),
+	whedon(_,Name,Role, _),
+	whedon(_,Name,Role2, _),
 	(Role \= Role2).
+
+hatTrick(Who) :-
+	whedon(F, Who,_,_),
+	whedon(A, Who, _,_),
+	whedon(B, Who, _,_),
+	(A \= B),
+	(A \= F),
+	(F \= B).
 
 hasOscar(Name) :-
 	oscar(award(_,_,_), person(Name,_)).
 
-/*
-winner(Type, Year, Award) :-
-	oscar(award(_,_,_), person(_,_)).
-*/
+
+winner(X, Year, Award) :-
+	oscar(award(Award,Year,winner), person(X,_)) ; oscar(award(Award, Year, winner), film(X)).
+
+
+
+doubleNominee(Name) :-
+	oscar(award(X,_,winner), person(Name,_)),
+	oscar(award(Y,_,winner), person(Name,_)),
+	X \= Y.
