@@ -23,15 +23,7 @@ isort([X|Xs],Result) :-
     insert(X,SortedTail,Result).
 
 
-re([],[]).
-re([X|Xs],Answer):-
-	re(Xs, Result),
-	append(Result,[X],Answer).
-
-palidrome([]).
-palidrome(X):-
-	re(X, L),
-	X = L.
-
-greatofthetwo(X, Y):-
-	X > Y.
+rrev2([],[]).
+rev2([X|Xs],Answer):-
+	append(Result,[X],Answer),
+	rev(Xs, Result)
